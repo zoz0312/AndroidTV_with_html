@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/foundation-icons.css"/>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/object_info.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+
+
+<body>
+    <div class="control-contain"></div>
+    <!--<div id="div-logo"><img id="logo" src="./img/depth1_logo.png"/></div>-->
+    <div class="detail">
+        <div id="line2" class="fi-list btn-list" type="button" tabindex="3"></div>
+        <div id="line3" class="fi-thumbnails btn-list" type="button" tabindex="4"></div>
+    </div>
+    <div id="wrap">
+<!--
+<div id="tab-click1">1111</div>
+<div id="tab-click2">3333</div>
+-->
+        <img id="could" src="./img/clouds.png"/>
+        <table id="tb-list"></table>
+        <div id="div-list"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    /*
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+    $(document).ready(function($){
+        var cl_title = ".div-contain .list-box .textfeild .title";
+        var cl_name = ".div-contain .list-box .textfeild .writer";
+        if(!isMobile) {
+            $(cl_title).css({'font-size':'1.2em'});
+            $(cl_name).css({'font-size':'0.5em'});
+        }
+    });
+    */
+    $(document).ready(function(){
+        initDepth();
+    }); 
+    var tabindex = 0;
+    
+    function tab_next(){
+        if ( tabindex < list_value ){
+            tabindex++;
+        }
+        $('[tabindex=' + tabindex + ']').focus();
+    }
+    function tab_prev(){
+        if ( tabindex > 1 ){
+            tabindex--;
+        }
+        $('[tabindex=' + tabindex + ']').focus();        
+    }
+
+
+    function tab_up(){
+        if ( q_value[1] == 1 ){
+            if ( tabindex > 1 ){
+                tabindex--;
+            }
+        } else {
+            if( tabindex > 7 ){
+                tabindex -= 3;
+            } else if ( tabindex > 4 ){
+                tabindex = 4;
+            } else {
+                tabindex--;
+            }
+        }
+        $('[tabindex=' + tabindex + ']').focus();
+    }
+    function tab_down(){
+        if ( q_value[1] == 1 ){
+            if ( tabindex < 5 ){
+                tabindex = 5;
+            } else if ( tabindex < list_value ) {
+                tabindex++;
+            }
+        } else {
+            if( tabindex < 5 ){
+                tabindex = 5;
+            } else if ( tabindex > 4 ){
+                tabindex += 3;
+                if ( tabindex > list_value ){
+                    tabindex = list_value;
+                }
+            }
+        }
+        $('[tabindex=' + tabindex + ']').focus();
+    }
+
+    function tab_click(){
+        $('[tabindex=' + tabindex + ']').trigger("click");
+    }
+/*
+    $('#tab-click1').click(function(){
+        window.event.keyCode = 9;
+        $('[tabindex=' + tabindex + ']').focus();
+        tabindex++;
+    });
+    $('#tab-click2').click(function(){
+        window.event.keyCode = 9;
+        $('[tabindex=' + tabindex + ']').focus();
+        if ( tabindex > 1 ){
+            tabindex--;
+        }
+    });
+    */
+</script>
+</html>

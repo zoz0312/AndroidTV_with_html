@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>수어영상도서 테스트</title>	
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/object_info.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+<body>
+	<!--<div id="div-logo"><img id="logo" src="./img/depth1_logo.png"/></div>-->
+	<div><img id="bg" src="./img/depth1_background.png"/></div>
+	<div id="wrap">
+		<div class="btn-feild">
+			<div class="feild m-1">
+				<div class="top-btn" id="btn1" type="button" ><img src="./img/btn1.png" tabindex="1"/><p class="btn1"></p></div>
+				<div class="top-btn" id="btn2" type="button"><img src="./img/btn2.png" tabindex="2"/><p class="btn2"></p></div>
+				<div class="top-btn" id="btn3" type="button"><img src="./img/btn3.png" tabindex="3"/><p class="btn3"></p></div>
+				<div class="top-btn" id="btn4" type="button"><img src="./img/btn4.png" tabindex="4"/><p class="btn4"></p></div>
+				<div class="top-btn" id="btn5" type="button"><img src="./img/btn5.png" tabindex="5"/><p class="btn5"></p></div>
+
+				<div class="feild m-2">					
+					<div class="top-btn" id="btn6" type="button"><img src="./img/btn6.png" tabindex="6"/><p class="btn6"></p></div>
+					<div class="top-btn" id="btn7" type="button"><img src="./img/btn7.png" tabindex="7"/><p class="btn7"></p></div>
+					<div class="top-btn" id="btn8" type="button"><img src="./img/btn8.png" tabindex="8"/><p class="btn8"></p></div>
+					<div class="top-btn" id="btn9" type="button"><img src="./img/btn9.png" tabindex="9"/><p class="btn9"></p></div>
+					<div class="top-btn" id="btn10" type="button"><img src="./img/btn10.png" tabindex="10"/><p class="btn10"></p></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        initIndex();
+    });
+
+    /* Android TV Remote Control */
+    var tabindex = 0;
+    function tab_next(){
+    	if ( tabindex < 10 ){
+            tabindex++;
+        }
+        $('[tabindex=' + tabindex + ']').focus();
+    }
+    function tab_prev(){
+    	if ( tabindex > 1 ){
+            tabindex--;
+        }
+        $('[tabindex=' + tabindex + ']').focus();
+    }
+    function tab_up(){
+    	if ( tabindex > 5 ){
+            tabindex-=5;
+        }
+        $('[tabindex=' + tabindex + ']').focus();        
+    }
+    function tab_down(){
+        if ( tabindex < 6 ){
+            tabindex+=5;
+        }
+        $('[tabindex=' + tabindex + ']').focus();
+    }
+    function tab_click(){
+        $('[tabindex=' + 1 + ']').parent().trigger("click");
+    }
+    /* Android TV Remote Control */
+</script>
+</html>

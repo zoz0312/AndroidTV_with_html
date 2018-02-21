@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>학교예술</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/object_info.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script> 
+</head>
+    
+
+<body>
+    <div class="control-contain"></div>
+    <!--<div id="div-logo"><img id="logo" src="./img/depth1_logo.png"/></div>-->
+    <div><img id="bg" src="./img/depth3_background.png"/></div>
+    <div id="wrap">
+        <div class="vod-contain">
+            <div class="btn-contain-L"><img class="btn-L" src="./img/btnLeft.png"/></button>
+            </div><video id="video" controls autoplay controlsList="nodownload">
+                <track id="vtt" kink="caption" label="한국어" default ></track>
+            </video><div class="btn-contain-R"><img class="btn-R" src="./img/btnRight.png"/></div>
+
+            <div class="title"></div>
+            <!--
+            <div class="text-feild">
+                <div class="b-class"></div>
+                <div class="title"></div>
+                <div class="writer"></div>
+                <div class="pub"></div>
+                <div class="pubD"></div>
+            </div>
+            -->
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        initVideo();
+    });
+</script>
+</html>
